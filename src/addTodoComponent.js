@@ -6,7 +6,7 @@ class AddTodo extends React.Component {
 		this.addTodoItem = this.addTodoItem.bind(this);
 		this.updateNewTodoItem = this.updateNewTodoItem.bind(this);
 		this.state = {
-			newTodo: this.props.texto
+			newTodo: ''
 		};
 	}
 	
@@ -20,16 +20,19 @@ class AddTodo extends React.Component {
 	}
 	
 	addTodoItem() {
-		this.props.addTodo(this.state.newTodo);
-		this.state = {
-			newTodo: ''
-		};		
+		this.props.addTodo(this.state.newTodo);	
 	}
 	
 	updateNewTodoItem(event) {
 		this.setState({
 			newTodo: event.target.value
 		});	
+	}
+	
+	componentWillReceiveProps() {
+		this.setState({
+			newTodo: ''
+		});
 	}
 }
 

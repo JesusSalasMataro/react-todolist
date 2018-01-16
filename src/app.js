@@ -7,9 +7,8 @@ class App extends React.Component {
 		super();
 		this.addTodo = this.addTodo.bind(this);
 		this.state = {
-			items: [],
-			currentItem: '',
-			newTodo: ''
+			todoItems: [],
+			currentItem: ''
 		};
 	}
 	
@@ -20,12 +19,12 @@ class App extends React.Component {
 					<h3>TODO list</h3>
 				</div>
 				<div>					
-					<AddTodo addTodo={this.addTodo} texto={this.state.newTodo}/>
+					<AddTodo addTodo={this.addTodo}/>
 				</div>
 				
 				<div>
 				{
-					this.state.items.map((item) => 
+					this.state.todoItems.map((item) => 
 						<div key={'div-' + item} className="todoItem">
 							<label key={item}>{item}</label>
 						</div>
@@ -38,15 +37,14 @@ class App extends React.Component {
 	}
 	
 	addTodo(item) {
-		let itemList = this.state.items.slice();
+		let todoItemsArray = this.state.todoItems.slice();
 		
-		if (itemList.indexOf(item) === -1 && item.length > 0) {
-			itemList.push(item);		
+		if (todoItemsArray.indexOf(item) === -1 && item.length > 0) {
+			todoItemsArray.push(item);		
 		}
 		
 		this.setState({
-			items: itemList,
-			newTodo: ''	
+			todoItems: todoItemsArray
 		});			
 	}
 }
