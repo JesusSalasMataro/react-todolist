@@ -1,3 +1,7 @@
+h3 {
+	font-family: arial;
+}
+
 .divAddTodo {
 	margin-bottom: 10px;
 }
@@ -6,6 +10,40 @@
 	padding: 10px;
 	background-color: #ffff99;
 	margin: 5px;
-	width: 300px;
+}
 
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 15px;
+}
+
+.okButton {
+	float: right;
+	color: green;
+	background-color: #7bb67b;
+	font-weight: 700;
+	border: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin-top: -3px;
+}
+
+#btnAddTodo {
+	padding: 15px;
+	color: orange;
+	font-weight: 700;
+	background-color: #f3deb8;
+	border: 0;
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+#inputAddTodo {
+	padding: 15px;
+	background-color: #f3deb8;
+	border: none;
+	font-size: 16px;
 }

@@ -13,8 +13,8 @@ class AddTodo extends React.Component {
 	render() {
 		return (
 			<div className="divAddTodo">
-				<input id="inputTodo" type="text" onChange={this.updateNewTodoItem} value={this.state.newTodo}/>
-				<input type="button" value="Add TODO" onClick={this.addTodoItem}/>
+				<input id="inputAddTodo" type="text" placeholder="New ToDo..." onChange={this.updateNewTodoItem} value={this.state.newTodo}/>
+				<input id="btnAddTodo" type="button" value="Add TODO" onClick={this.addTodoItem}/>
 			</div>
 		);
 	}

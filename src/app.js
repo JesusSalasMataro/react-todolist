@@ -8,6 +8,7 @@ class App extends React.Component {
 		this.addTodo = this.addTodo.bind(this);
 		this.state = {
 			todoItems: [],
+			doneItems: [],
 			currentItem: ''
 		};
 	}
@@ -16,20 +17,37 @@ class App extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>TODO list</h3>
+					<h3>TODO List</h3>
+					<hr/>
 				</div>
 				<div>					
 					<AddTodo addTodo={this.addTodo}/>
 				</div>
 				
 				<div>
-				{
-					this.state.todoItems.map((item) => 
-						<div key={'div-' + item} className="todoItem">
-							<label key={item}>{item}</label>
-						</div>
-					)
-				}
+					<div className="column">
+						<h3>TODO</h3>
+
+						{
+							this.state.todoItems.map((item) => 
+								<div key={'div-' + item} className="todoItem">
+									<label key={item}>{item}</label>
+									<input className="okButton" type="button" value="Ok" />
+								</div>
+							)
+						}
+					</div>
+					<div className="column">
+						<h3>DONE</h3>
+
+						{
+							this.state.doneItems.map((item) => 
+							<div key={'div-' + item} className="doneItem">
+								<label key={item}>{item}</label>
+							</div>
+						)							
+						}
+					</div>
 				</div>
 				
 			</div>
